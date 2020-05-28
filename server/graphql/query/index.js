@@ -6,9 +6,11 @@ import {
   GraphQLNonNull
 } from 'graphql';
 
-import School from '../../model/model';
+import School from "../../model/school";
+import State from "../../model/state";
 
 import SchoolType from "../typedefs/School";
+import StateType from "../typedefs/State";
 
 export default new GraphQLObjectType({
   name: 'RootQueryType',
@@ -40,6 +42,12 @@ export default new GraphQLObjectType({
       },
       resolve(parent, args){
         return School.find({state: args.state.toUpperCase()})
+      }
+    },
+    states: {
+      type: new GraphQLList(StateType),
+      resolve(parent, args){
+        return State.find({})
       }
     }
   }
