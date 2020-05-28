@@ -8,7 +8,7 @@ import schema from './schema';
 
 dotenv.config();
 
-const port = 8080; 
+const port = process.env.PORT || 8080; 
 
 const app = express();
 mongoose.connect(process.env.MONGOLAB_URI);
