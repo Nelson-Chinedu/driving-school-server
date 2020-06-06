@@ -13,7 +13,7 @@ const port = process.env.PORT || 8080;
 const app = express();
 mongoose.connect(process.env.MONGOLAB_URI);
 mongoose.connection.once('open', () => {
-  console.log('connected to db');
+  console.log('connected to db 🚀🚀');
 })
 
 // middleware
@@ -25,5 +25,5 @@ app.use('/graphql', graphqlHTTP({
 }))
 
 app.listen(port, () => {
-  console.log(`App started on port ${port}`);
+  console.log(`App started on port ${port} 🚀🚀🚀`);
 });
