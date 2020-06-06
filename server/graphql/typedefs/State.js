@@ -9,6 +9,9 @@ export default new GraphQLObjectType({
     },
     name: {
       type: GraphQLString
+    },
+    landmark: {
+      type: GraphQLString
     }
   })
 })
